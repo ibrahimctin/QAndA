@@ -16,15 +16,20 @@
     <Folder Include="Features\Answers\" />
     <Folder Include="Features\AppUsers\" />
     <Folder Include="Features\Posts\" />
-    <Folder Include="Features\Questions\Handlers\Commands\" />
     <Folder Include="Features\Questions\Handlers\Queries\" />
     <Folder Include="Features\Questions\Requests\Queries\" />
-    <Folder Include="Profiles\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.21.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\QAndA.Domain.Application.DTOs\QAndA.Domain.Application.DTOs.csproj" />
+    <ProjectReference Include="..\QAndA.Domain.Entities\QAndA.Domain.Entities.csproj" />
   </ItemGroup>
 
 </Project>

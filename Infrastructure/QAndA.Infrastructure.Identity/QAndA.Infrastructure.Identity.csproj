@@ -6,4 +6,15 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="6.0.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domain\QAndA.Domain.Application\QAndA.Domain.Application.csproj" />
+    <ProjectReference Include="..\..\Domain\QAndA.Domain.Entities\QAndA.Domain.Entities.csproj" />
+  </ItemGroup>
+
 </Project>
