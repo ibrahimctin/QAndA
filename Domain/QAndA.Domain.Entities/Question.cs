@@ -1,4 +1,5 @@
 ﻿using QAndA.Domain.Entities.Common;
+using QAndA.Domain.Entities.IdentityEntities;
 
 namespace QAndA.Domain.Entities
 {
@@ -6,6 +7,8 @@ namespace QAndA.Domain.Entities
     {
         public string Name { get; set; }
         public string Description { get; set; }
-        public IEnumerable<Question> Questions { get; set; }
+        public IEnumerable<Answer> Answers { get; set; }
+        public IEnumerable<AppUser> Users { get; set; }
+       
     }
 }

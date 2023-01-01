@@ -13,8 +13,7 @@
     <Folder Include="AppUsers\ResponseDtos\" />
     <Folder Include="Posts\ResponseDtos\" />
     <Folder Include="Posts\RequestDtos\" />
-    <Folder Include="Questions\Responses\" />
-    <Folder Include="Questions\RequestDtos\" />
+    <Folder Include="Questions\ResponseDtos\" />
   </ItemGroup>
 
 </Project>

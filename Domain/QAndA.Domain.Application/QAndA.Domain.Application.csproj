@@ -16,7 +16,9 @@
     <Folder Include="Features\Answers\" />
     <Folder Include="Features\AppUsers\" />
     <Folder Include="Features\Posts\" />
-    <Folder Include="Features\Questions\" />
+    <Folder Include="Features\Questions\Handlers\Commands\" />
+    <Folder Include="Features\Questions\Handlers\Queries\" />
+    <Folder Include="Features\Questions\Requests\Queries\" />
     <Folder Include="Profiles\" />
   </ItemGroup>
 

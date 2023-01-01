@@ -1,10 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using QAndA.Domain.Entities;
 using QAndA.Domain.Entities.IdentityEntities;
 
 namespace QAndA.Infrastructure
 {
-    public class AppDbContext:DbContext
+    public class AppDbContext:IdentityDbContext
     {
 
         public AppDbContext(DbContextOptions<AppDbContext> options):base(options) 

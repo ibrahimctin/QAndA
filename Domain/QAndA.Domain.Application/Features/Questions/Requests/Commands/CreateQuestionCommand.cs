@@ -1,6 +1,8 @@
-﻿namespace QAndA.Domain.Application.Features.Questions.Requests.Commands
+﻿using MediatR;
+
+namespace QAndA.Domain.Application.Features.Questions.Requests.Commands
 {
-    internal class CreateQuestionCommand
+    public class CreateQuestionCommand:IRequest<string>
     {
     }
 }
