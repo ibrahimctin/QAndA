@@ -7,13 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Features\Questions\Commands\**" />
+    <EmbeddedResource Remove="Features\Questions\Commands\**" />
+    <None Remove="Features\Questions\Commands\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Features\Answers\" />
     <Folder Include="Features\AppUsers\" />
     <Folder Include="Features\Posts\" />
-    <Folder Include="Features\Questions\Commands\Handlers\" />
-    <Folder Include="Features\Questions\Commands\Requests\" />
-    <Folder Include="Features\Questions\Queries\Handlers\" />
-    <Folder Include="Features\Questions\Queries\Requests\" />
+    <Folder Include="Features\Questions\" />
     <Folder Include="Profiles\" />
   </ItemGroup>
 
