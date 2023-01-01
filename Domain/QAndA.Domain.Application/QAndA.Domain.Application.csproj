@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Features\Answers\" />
+    <Folder Include="Features\AppUsers\" />
+    <Folder Include="Features\Posts\" />
+    <Folder Include="Features\Questions\Commands\Handlers\" />
+    <Folder Include="Features\Questions\Commands\Requests\" />
+    <Folder Include="Features\Questions\Queries\Handlers\" />
+    <Folder Include="Features\Questions\Queries\Requests\" />
+    <Folder Include="Profiles\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+  </ItemGroup>
+
+</Project>
