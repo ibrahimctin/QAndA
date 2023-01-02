@@ -13,7 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Answers\" />
     <Folder Include="Features\Identity\Handlers\" />
     <Folder Include="Features\Identity\Requests\" />
     <Folder Include="Features\Posts\" />

@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Answers\RequestDtos\" />
     <Folder Include="Answers\ResponseDtos\" />
     <Folder Include="AppUsers\RequestDtos\" />
     <Folder Include="AppUsers\ResponseDtos\" />
