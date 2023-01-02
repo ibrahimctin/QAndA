@@ -30,6 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Infrastructure\QAndA.Infrastructure\QAndA.Infrastructure.csproj" />
     <ProjectReference Include="..\QAndA.Domain.Application.DTOs\QAndA.Domain.Application.DTOs.csproj" />
     <ProjectReference Include="..\QAndA.Domain.Entities\QAndA.Domain.Entities.csproj" />
   </ItemGroup>
