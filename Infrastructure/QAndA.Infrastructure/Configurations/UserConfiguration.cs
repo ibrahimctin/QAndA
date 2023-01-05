@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using QAndA.Domain.Entities.IdentityEntities;
 
-namespace QAndA.Infrastructure.Identity.Configurations
+namespace QAndA.Infrastructure.Configurations
 {
     internal class UserConfiguration : IEntityTypeConfiguration<AppUser>
     {
@@ -21,7 +21,8 @@ namespace QAndA.Infrastructure.Identity.Configurations
                      UserName = "admin@localhost.com",
                      NormalizedUserName = "ADMIN@LOCALHOST.COM",
                      PasswordHash = hasher.HashPassword(null, "P@ssword1"),
-                     EmailConfirmed = true
+                     EmailConfirmed = true,
+                     
                  },
                  new AppUser
                  {

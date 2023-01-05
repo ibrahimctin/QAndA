@@ -12,9 +12,17 @@ namespace QAndA.Domain.Application.Features.Identity.Authentication.Register.Han
         private readonly IMapper _mapper;
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
+
+        public RegisterCommandHandler(IMapper mapper, UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
+        {
+            _mapper = mapper;
+            _userManager = userManager;
+            _signInManager = signInManager;
+        }
+
         public async Task<IdentityResult> Handle(RegisterCommand request, CancellationToken cancellationToken)
         {
-            var user = _mapper.Map<AppUser>(request);
+            var user = _mapper.Map<AppUser>(request.RegisterRequest);
 
             if (user is null)
             {

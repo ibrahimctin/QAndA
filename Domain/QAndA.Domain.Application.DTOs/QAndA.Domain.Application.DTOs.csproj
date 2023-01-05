@@ -9,7 +9,6 @@
   <ItemGroup>
     <Folder Include="Answers\ResponseDtos\" />
     <Folder Include="AppUsers\RequestDtos\" />
-    <Folder Include="AppUsers\ResponseDtos\" />
     <Folder Include="Posts\ResponseDtos\" />
     <Folder Include="Posts\RequestDtos\" />
     <Folder Include="Questions\ResponseDtos\" />

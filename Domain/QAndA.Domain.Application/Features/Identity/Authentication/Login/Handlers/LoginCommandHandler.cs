@@ -33,7 +33,7 @@ namespace QAndA.Domain.Application.Features.Identity.Authentication.Login.Handle
                 throw new Exception($"User with {request.Email} not found.");
             }
 
-            var result = await _signInManager.PasswordSignInAsync(user.UserName, request.Password, false, lockoutOnFailure: false);
+            var result = await _signInManager.PasswordSignInAsync(user, request.Password, false, false);
 
             if (!result.Succeeded)
             {

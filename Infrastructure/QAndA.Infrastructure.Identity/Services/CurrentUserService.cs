@@ -20,13 +20,13 @@ namespace QAndA.Infrastructure.Identity.Services
         {
 
             // Take user from context "Curren User"
-            var user = _httpContextAccessor.HttpContext.User;
+            var user =  _httpContextAccessor.HttpContext.User;
 
             // Validate
 
             if (!user.Identity.IsAuthenticated)
             {
-                throw new UnauthorizedAccessException();
+                    throw new UnauthorizedAccessException();
             }
             // we get current user e-mail from user claims
             var emailClaim = user.Claims.FirstOrDefault(c => c.Type.Equals(ClaimTypes.Email));

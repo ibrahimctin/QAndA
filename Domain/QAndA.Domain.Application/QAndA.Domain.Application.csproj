@@ -13,18 +13,21 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Features\Answers\Handlers\Queries\" />
+    <Folder Include="Features\Answers\Requests\Queries\" />
     <Folder Include="Features\Identity\Handlers\" />
     <Folder Include="Features\Identity\Requests\" />
-    <Folder Include="Features\Posts\" />
+    <Folder Include="Features\Posts\Handlers\Queries\" />
+    <Folder Include="Features\Posts\Requests\Queries\" />
     <Folder Include="Features\Questions\Handlers\Queries\" />
     <Folder Include="Features\Questions\Requests\Queries\" />
-    <Folder Include="Helpers\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.21.0" />
   </ItemGroup>
 
