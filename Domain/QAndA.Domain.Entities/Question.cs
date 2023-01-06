@@ -7,9 +7,9 @@ namespace QAndA.Domain.Entities
     {
         public string Name { get; set; }
         public string Description { get; set; }
-        public string UserId { get; set; }
+      
         public IEnumerable<Answer> Answers { get; set; }
-        public IEnumerable<AppUser> Users { get; set; }
+        public AppUser User { get; set; }
        
     }
 }

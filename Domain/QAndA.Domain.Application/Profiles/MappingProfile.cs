@@ -3,6 +3,7 @@ using QAndA.Domain.Application.DTOs.Answers.RequestDtos;
 using QAndA.Domain.Application.DTOs.AppUsers.ResponseDtos;
 using QAndA.Domain.Application.DTOs.Authentications.RequestDtos;
 using QAndA.Domain.Application.DTOs.Questions.RequestDtos;
+using QAndA.Domain.Application.DTOs.Questions.ResponseDtos;
 using QAndA.Domain.Entities;
 using QAndA.Domain.Entities.IdentityEntities;
 
@@ -14,6 +15,7 @@ namespace QAndA.Domain.Application.Profiles
         {
             CreateMap<Question,CreateQuestionRequest>().ReverseMap();
             CreateMap<Answer, CreateAnswerRequest>().ReverseMap();
+            CreateMap<Question, QuestionDetailResponse>().ReverseMap();
             CreateMap<AppUser,RegisterRequest>().ReverseMap();  
             CreateMap<AppUser,AppUserDetailResponse>().ReverseMap();
         }

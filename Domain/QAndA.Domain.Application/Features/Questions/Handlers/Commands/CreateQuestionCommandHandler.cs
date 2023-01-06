@@ -7,6 +7,7 @@ using QAndA.Domain.Application.Helpers.Results;
 using QAndA.Domain.Entities;
 using QAndA.Domain.Entities.IdentityEntities;
 using QAndA.Infrastructure;
+using System.Collections.Generic;
 
 namespace QAndA.Domain.Application.Features.Questions.Handlers.Commands
 {
@@ -25,11 +26,15 @@ namespace QAndA.Domain.Application.Features.Questions.Handlers.Commands
 
         public async Task<Result> Handle(CreateQuestionCommand request, CancellationToken cancellationToken)
         {
-            
-             _mapper.Map<AppUser>(await CurrentUser());
-            var questionPayload = _mapper.Map<Question>(request.CreateQuestionRequest);
-            questionPayload.UserId = await _currentUser.GetCurrentUserIdAsync();
-         
+
+             var questionUserPayload = await CurrentUser();
+             var questionPayload = _mapper.Map<Question>(request.CreateQuestionRequest);
+
+
+            questionPayload.User = questionUserPayload;
+
+            _mapper.Map<AppUserDetailResponse>(questionPayload.User);
+           
 
             if (questionPayload is not null)
             {

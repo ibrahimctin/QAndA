@@ -25,7 +25,7 @@ namespace QAndA.Domain.Application.Features.Identity.Authentication.Login.Handle
         }
 
         public async Task<AuthResponse> Handle(LoginCommand request, CancellationToken cancellationToken)
-        {
+            {
             var user = await _userManager.FindByEmailAsync(request.Email);
 
             if (user == null)

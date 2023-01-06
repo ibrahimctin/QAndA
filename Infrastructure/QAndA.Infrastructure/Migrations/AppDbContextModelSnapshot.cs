@@ -17,10 +17,10 @@ namespace QAndA.Infrastructure.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.1")
+                .HasAnnotation("ProductVersion", "6.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
@@ -53,12 +53,14 @@ namespace QAndA.Infrastructure.Migrations
                         new
                         {
                             Id = "cac43a6e-f7bb-4448-baaf-1add431ccbbf",
+                            ConcurrencyStamp = "c08882fc-4768-4d4b-b798-b5fa65430f5d",
                             Name = "Member",
                             NormalizedName = "MEMBER"
                         },
                         new
                         {
                             Id = "cbc43a8e-f7bb-4445-baaf-1add431ffbbf",
+                            ConcurrencyStamp = "91b49441-5a7b-4208-9659-2e1dc78134a0",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });
@@ -70,7 +72,7 @@ namespace QAndA.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("ClaimType")
                         .HasColumnType("nvarchar(max)");
@@ -95,7 +97,7 @@ namespace QAndA.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("ClaimType")
                         .HasColumnType("nvarchar(max)");
@@ -200,17 +202,15 @@ namespace QAndA.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CreatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("DateCreated")
+                    b.Property<DateTime?>("DateCreated")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("LastModifiedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("LastModifiedDate")
+                    b.Property<DateTime?>("LastModifiedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("PostId")
@@ -286,9 +286,6 @@ namespace QAndA.Infrastructure.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<string>("QuestionId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
@@ -309,8 +306,6 @@ namespace QAndA.Infrastructure.Migrations
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
-                    b.HasIndex("QuestionId");
-
                     b.ToTable("AspNetUsers", (string)null);
 
                     b.HasData(
@@ -318,7 +313,7 @@ namespace QAndA.Infrastructure.Migrations
                         {
                             Id = "8e445865-a24d-4543-a6c6-9443d048cdb9",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "7aea9063-4cc7-4db3-83c8-956d435fe7da",
+                            ConcurrencyStamp = "eb51955b-7d1c-4ffb-9eff-f8d2021745ab",
                             Email = "admin@localhost.com",
                             EmailConfirmed = true,
                             FirstName = "System",
@@ -326,7 +321,7 @@ namespace QAndA.Infrastructure.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@LOCALHOST.COM",
                             NormalizedUserName = "ADMIN@LOCALHOST.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEOZFo1p4TZ370m2XpqSG1N/GrEDecXtdhr5q1YLjazMP7pun5GmQV0Px952DcuD4LQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAENeDZI3SKhsB/4hJl74vNlzeOBSy9K/bolWdfqUmwAHcBpUBGzOdWOUgT84LNr7/yw==",
                             PhoneNumberConfirmed = false,
                             TwoFactorEnabled = false,
                             UserName = "admin@localhost.com"
@@ -335,7 +330,7 @@ namespace QAndA.Infrastructure.Migrations
                         {
                             Id = "9e224968-33e4-4652-b7b7-8574d048cdb9",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "4848c042-f87c-47b2-b48c-40f8eb034a23",
+                            ConcurrencyStamp = "6194396c-1cf1-47ec-bb4d-b41019affa5e",
                             Email = "user@localhost.com",
                             EmailConfirmed = true,
                             FirstName = "System",
@@ -343,7 +338,7 @@ namespace QAndA.Infrastructure.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "USER@LOCALHOST.COM",
                             NormalizedUserName = "USER@LOCALHOST.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEMr2i7+s1iJDXbezyW8ubZeaUz7Lr1mlCVr3zsDBzi8eqLtwOeAPybWM0v/vJgnKng==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEBS5KxZPyeaJHc35EvFjCwa+iO8VvjSHCZAm5LJEtfXvVQ4u7Df6+TfvUkJLz9NabQ==",
                             PhoneNumberConfirmed = false,
                             TwoFactorEnabled = false,
                             UserName = "user@localhost.com"
@@ -361,17 +356,15 @@ namespace QAndA.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CreatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("DateCreated")
+                    b.Property<DateTime?>("DateCreated")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("LastModifiedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("LastModifiedDate")
+                    b.Property<DateTime?>("LastModifiedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Title")
@@ -390,10 +383,9 @@ namespace QAndA.Infrastructure.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("CreatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("DateCreated")
+                    b.Property<DateTime?>("DateCreated")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
@@ -401,10 +393,9 @@ namespace QAndA.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastModifiedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("LastModifiedDate")
+                    b.Property<DateTime?>("LastModifiedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
@@ -415,12 +406,13 @@ namespace QAndA.Infrastructure.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("PostId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Questions");
                 });
@@ -499,18 +491,17 @@ namespace QAndA.Infrastructure.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("QAndA.Domain.Entities.IdentityEntities.AppUser", b =>
-                {
-                    b.HasOne("QAndA.Domain.Entities.Question", null)
-                        .WithMany("Users")
-                        .HasForeignKey("QuestionId");
-                });
-
             modelBuilder.Entity("QAndA.Domain.Entities.Question", b =>
                 {
                     b.HasOne("QAndA.Domain.Entities.Post", null)
                         .WithMany("Questions")
                         .HasForeignKey("PostId");
+
+                    b.HasOne("QAndA.Domain.Entities.IdentityEntities.AppUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("QAndA.Domain.Entities.Post", b =>
@@ -523,8 +514,6 @@ namespace QAndA.Infrastructure.Migrations
             modelBuilder.Entity("QAndA.Domain.Entities.Question", b =>
                 {
                     b.Navigation("Answers");
-
-                    b.Navigation("Users");
                 });
 #pragma warning restore 612, 618
         }
