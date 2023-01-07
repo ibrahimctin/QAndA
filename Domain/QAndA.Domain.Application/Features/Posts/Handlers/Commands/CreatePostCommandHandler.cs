@@ -35,17 +35,8 @@ namespace QAndA.Domain.Application.Features.Posts.Handlers.Commands
             postPayload.Questions = postQuestionsPayload;
 
 
-            if (postQuestionsPayload is null)
-            {
-                return Result.Failed("This question is gone");
-            }
-            var postDto =  _mapper.Map<IEnumerable<QuestionDetailResponse>>(postPayload.Questions);
-
-            foreach (var item in postDto)
-            {
-                item.Answers = _mapper.Map<IEnumerable<AnswerDetailResponse>>(postPayload.Answers);
-            };
-
+            _mapper.Map<IEnumerable<QuestionDetailResponse>>(postPayload.Questions);
+            _mapper.Map<IEnumerable<AnswerDetailResponse>>(postPayload.Answers);
 
             if (postPayload is not null)
             {
