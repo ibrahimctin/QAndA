@@ -17,8 +17,6 @@
     <Folder Include="Features\Answers\Requests\Queries\" />
     <Folder Include="Features\Identity\Handlers\" />
     <Folder Include="Features\Identity\Requests\" />
-    <Folder Include="Features\Posts\Handlers\Queries\" />
-    <Folder Include="Features\Posts\Requests\Queries\" />
     <Folder Include="Features\Questions\Handlers\Queries\" />
     <Folder Include="Features\Questions\Requests\Queries\" />
   </ItemGroup>

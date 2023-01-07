@@ -3,6 +3,7 @@ using QAndA.Domain.Application.Profiles;
 using QAndA.Domain.Application.Registrations;
 using QAndA.Infrastructure.Identity.Registrations;
 using QAndA.Infrastructure.Registrations;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,11 @@ builder.Services.ConfigureIdentityServices(builder.Configuration);
 builder.Services.ConfigureApplicationServices();
 builder.Services.ConfigureIdentity();
 builder.Services.AddHttpContextAccessor();
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+    options.JsonSerializerOptions.WriteIndented = true;
+});
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 var settings = new JwtSettings();
 builder.Configuration.GetSection("Jwt").Bind(settings);

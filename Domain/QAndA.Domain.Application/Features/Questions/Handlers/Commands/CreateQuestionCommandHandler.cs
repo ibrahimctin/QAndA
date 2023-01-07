@@ -45,7 +45,10 @@ namespace QAndA.Domain.Application.Features.Questions.Handlers.Commands
             return questionPayload is null ? Result.Failed(message: "Failed To Create") : Result.SuccessFul();
 
         }
-
+        /// <summary>
+        /// question ID 8fee2da0-b4eb-460e-98a7-0b906615a970
+        /// </summary>
+        /// <returns></returns>
 
         #region CurrentUser
         private async Task<AppUser> CurrentUser() => await _currentUser.GetCurrentUser();
