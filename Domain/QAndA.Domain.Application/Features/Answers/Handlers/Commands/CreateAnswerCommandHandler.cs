@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using QAndA.Domain.Application.Contracts.Identity;
 using QAndA.Domain.Application.DTOs.AppUsers.ResponseDtos;
 using QAndA.Domain.Application.DTOs.Questions.ResponseDtos;
 using QAndA.Domain.Application.Features.Answers.Requests.Commands;
@@ -9,6 +8,7 @@ using QAndA.Domain.Application.Helpers.Results;
 using QAndA.Domain.Entities;
 using QAndA.Domain.Entities.IdentityEntities;
 using QAndA.Infrastructure;
+using QAndA.Infrastructure.Extensions;
 
 namespace QAndA.Domain.Application.Features.Answers.Handlers.Commands
 {

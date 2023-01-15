@@ -10,6 +10,7 @@ using QAndA.Domain.Application.Helpers.Results;
 using QAndA.Domain.Entities;
 using QAndA.Domain.Entities.IdentityEntities;
 using QAndA.Infrastructure;
+using QAndA.Infrastructure.Extensions;
 using System.Collections.Generic;
 
 namespace QAndA.Domain.Application.Features.Posts.Handlers.Commands

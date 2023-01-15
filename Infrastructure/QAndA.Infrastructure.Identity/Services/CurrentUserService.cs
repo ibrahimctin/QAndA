@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
-using QAndA.Domain.Application.Contracts.Identity;
 using QAndA.Domain.Entities.IdentityEntities;
+using QAndA.Infrastructure.Extensions;
 using System.Security.Claims;
 
 namespace QAndA.Infrastructure.Identity.Services
@@ -60,5 +60,13 @@ namespace QAndA.Infrastructure.Identity.Services
             return currentUser is null ? default : currentUser.Id;
         }
 
+        public async Task<string> GetCurrentUserNameAsync()
+        {
+            // Get current user methot
+            var currentUser = await GetCurrentUser();
+
+            // and take return current user email
+            return currentUser is null ? default : currentUser.Email;
+        }
     }
 }

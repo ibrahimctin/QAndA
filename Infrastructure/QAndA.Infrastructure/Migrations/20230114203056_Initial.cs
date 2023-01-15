@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace QAndA.Infrastructure.Migrations
 {
-    public partial class Init : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -243,8 +243,8 @@ namespace QAndA.Infrastructure.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "cac43a6e-f7bb-4448-baaf-1add431ccbbf", "c08882fc-4768-4d4b-b798-b5fa65430f5d", "Member", "MEMBER" },
-                    { "cbc43a8e-f7bb-4445-baaf-1add431ffbbf", "91b49441-5a7b-4208-9659-2e1dc78134a0", "Administrator", "ADMINISTRATOR" }
+                    { "cac43a6e-f7bb-4448-baaf-1add431ccbbf", "b4b1faba-182a-438e-94a9-44671f20ebcc", "Member", "MEMBER" },
+                    { "cbc43a8e-f7bb-4445-baaf-1add431ffbbf", "7c70c82f-bd5a-421a-9e5d-9390985fa61a", "Administrator", "ADMINISTRATOR" }
                 });
 
             migrationBuilder.InsertData(
@@ -252,8 +252,8 @@ namespace QAndA.Infrastructure.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "8e445865-a24d-4543-a6c6-9443d048cdb9", 0, "eb51955b-7d1c-4ffb-9eff-f8d2021745ab", "admin@localhost.com", true, "System", "Admin", false, null, "ADMIN@LOCALHOST.COM", "ADMIN@LOCALHOST.COM", "AQAAAAEAACcQAAAAENeDZI3SKhsB/4hJl74vNlzeOBSy9K/bolWdfqUmwAHcBpUBGzOdWOUgT84LNr7/yw==", null, false, null, false, "admin@localhost.com" },
-                    { "9e224968-33e4-4652-b7b7-8574d048cdb9", 0, "6194396c-1cf1-47ec-bb4d-b41019affa5e", "user@localhost.com", true, "System", "User", false, null, "USER@LOCALHOST.COM", "USER@LOCALHOST.COM", "AQAAAAEAACcQAAAAEBS5KxZPyeaJHc35EvFjCwa+iO8VvjSHCZAm5LJEtfXvVQ4u7Df6+TfvUkJLz9NabQ==", null, false, null, false, "user@localhost.com" }
+                    { "8e445865-a24d-4543-a6c6-9443d048cdb9", 0, "f7b57e7e-f0ad-4b6c-bd63-4c1ca951708a", "admin@localhost.com", true, "System", "Admin", false, null, "ADMIN@LOCALHOST.COM", "ADMIN@LOCALHOST.COM", "AQAAAAEAACcQAAAAEJSeGsLPb9gJ0n2wxE9OLNb2m54jQ0E40pBm8l+lHLQDVT6cIu5/9jn+OA8o+7NqHg==", null, false, null, false, "admin@localhost.com" },
+                    { "9e224968-33e4-4652-b7b7-8574d048cdb9", 0, "09a5f006-af86-4f2d-bc0b-e7bbbc6191a4", "user@localhost.com", true, "System", "User", false, null, "USER@LOCALHOST.COM", "USER@LOCALHOST.COM", "AQAAAAEAACcQAAAAEO5Y6RRpVKXVvmYePeEu58E1OnsAq5xoVf95chK36ndyPs3qDuPolrDYPm1Xgk4c1Q==", null, false, null, false, "user@localhost.com" }
                 });
 
             migrationBuilder.InsertData(

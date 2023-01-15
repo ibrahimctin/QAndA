@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
@@ -6,15 +7,18 @@ using QAndA.Domain.Entities;
 using QAndA.Domain.Entities.Common;
 using QAndA.Domain.Entities.IdentityEntities;
 using QAndA.Infrastructure.Configurations;
+using QAndA.Infrastructure.Extensions;
+using QAndA.Infrastructure.Infrastructure.Extensions;
 
 namespace QAndA.Infrastructure
 {
     public class AppDbContext:IdentityDbContext<AppUser,IdentityRole,string>
     {
+        private readonly ICurrentUserService _currentUserService;
 
-        public AppDbContext(DbContextOptions<AppDbContext> options):base(options) 
+        public AppDbContext(DbContextOptions<AppDbContext> options, ICurrentUserService currentUserService) :base(options) 
         {
-                
+            _currentUserService = currentUserService;
         }
 
         public DbSet<Answer> Answers { get; set; }  
@@ -22,24 +26,29 @@ namespace QAndA.Infrastructure
         public DbSet<Post> Posts { get; set; }  
         public DbSet<AppUser> Users { get; set; }
 
-        public virtual async Task<int> SaveChangesAsync(string username = "SYSTEM")
+     
+        public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
-            foreach (var entry in base.ChangeTracker.Entries<BaseDomainEntity>()
-                .Where(q => q.State == EntityState.Added || q.State == EntityState.Modified))
-            {
-                entry.Entity.LastModifiedDate = DateTime.Now;
-                entry.Entity.LastModifiedBy = username;
+            ChangeTracker.SetAuditProperties(_currentUserService);
+            return await base.SaveChangesAsync(cancellationToken);
+        }
 
-                if (entry.State == EntityState.Added)
-                {
-                    entry.Entity.DateCreated = DateTime.Now;
-                    entry.Entity.CreatedBy = username;
-                }
-            }
+        public override int SaveChanges()
+        {
+            ChangeTracker.SetAuditProperties(_currentUserService);
+            return base.SaveChanges();
+        }
 
-            var result = await base.SaveChangesAsync();
+        public override int SaveChanges(bool acceptAllChangesOnSuccess)
+        {
+            ChangeTracker.SetAuditProperties(_currentUserService);
+            return base.SaveChanges(acceptAllChangesOnSuccess);
+        }
 
-            return result;
+        public override async Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default)
+        {
+            ChangeTracker.SetAuditProperties(_currentUserService);
+            return await base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

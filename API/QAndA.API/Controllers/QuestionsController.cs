@@ -27,6 +27,16 @@ namespace QAndA.API.Controllers
             var repsonse = await _mediator.Send(command);
             return Ok(repsonse);
         }
+        [HttpPost("UpdateQuestion")]
+        public async Task<ActionResult<Result>> UpdateQuestion([FromBody] UpdateQuestionRequest request ,string id)
+        {
+            var command = new UpdateQuestionCommand { UpdateQuestionRequest = request,Id=id };
+            var repsonse = await _mediator.Send(command);
+            return Ok(repsonse);
+
+
+
+        }
     }
 }
     

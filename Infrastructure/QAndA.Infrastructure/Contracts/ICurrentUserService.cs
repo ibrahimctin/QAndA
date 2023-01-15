@@ -1,11 +1,13 @@
 ﻿using QAndA.Domain.Entities.IdentityEntities;
 
-namespace QAndA.Domain.Application.Contracts.Identity
+namespace QAndA.Infrastructure.Extensions
 {
     public interface ICurrentUserService
     {
         Task<AppUser> GetCurrentUser();
 
         Task<string> GetCurrentUserIdAsync();
+
+        Task<string> GetCurrentUserNameAsync();
     }
 }

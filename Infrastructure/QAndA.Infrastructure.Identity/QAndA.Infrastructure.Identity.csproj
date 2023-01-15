@@ -16,6 +16,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Domain\QAndA.Domain.Application\QAndA.Domain.Application.csproj" />
     <ProjectReference Include="..\..\Domain\QAndA.Domain.Entities\QAndA.Domain.Entities.csproj" />
+    <ProjectReference Include="..\QAndA.Infrastructure\QAndA.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

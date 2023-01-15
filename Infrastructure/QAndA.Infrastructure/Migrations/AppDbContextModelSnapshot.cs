@@ -53,14 +53,14 @@ namespace QAndA.Infrastructure.Migrations
                         new
                         {
                             Id = "cac43a6e-f7bb-4448-baaf-1add431ccbbf",
-                            ConcurrencyStamp = "c08882fc-4768-4d4b-b798-b5fa65430f5d",
+                            ConcurrencyStamp = "b4b1faba-182a-438e-94a9-44671f20ebcc",
                             Name = "Member",
                             NormalizedName = "MEMBER"
                         },
                         new
                         {
                             Id = "cbc43a8e-f7bb-4445-baaf-1add431ffbbf",
-                            ConcurrencyStamp = "91b49441-5a7b-4208-9659-2e1dc78134a0",
+                            ConcurrencyStamp = "7c70c82f-bd5a-421a-9e5d-9390985fa61a",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });
@@ -313,7 +313,7 @@ namespace QAndA.Infrastructure.Migrations
                         {
                             Id = "8e445865-a24d-4543-a6c6-9443d048cdb9",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "eb51955b-7d1c-4ffb-9eff-f8d2021745ab",
+                            ConcurrencyStamp = "f7b57e7e-f0ad-4b6c-bd63-4c1ca951708a",
                             Email = "admin@localhost.com",
                             EmailConfirmed = true,
                             FirstName = "System",
@@ -321,7 +321,7 @@ namespace QAndA.Infrastructure.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@LOCALHOST.COM",
                             NormalizedUserName = "ADMIN@LOCALHOST.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAENeDZI3SKhsB/4hJl74vNlzeOBSy9K/bolWdfqUmwAHcBpUBGzOdWOUgT84LNr7/yw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJSeGsLPb9gJ0n2wxE9OLNb2m54jQ0E40pBm8l+lHLQDVT6cIu5/9jn+OA8o+7NqHg==",
                             PhoneNumberConfirmed = false,
                             TwoFactorEnabled = false,
                             UserName = "admin@localhost.com"
@@ -330,7 +330,7 @@ namespace QAndA.Infrastructure.Migrations
                         {
                             Id = "9e224968-33e4-4652-b7b7-8574d048cdb9",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "6194396c-1cf1-47ec-bb4d-b41019affa5e",
+                            ConcurrencyStamp = "09a5f006-af86-4f2d-bc0b-e7bbbc6191a4",
                             Email = "user@localhost.com",
                             EmailConfirmed = true,
                             FirstName = "System",
@@ -338,7 +338,7 @@ namespace QAndA.Infrastructure.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "USER@LOCALHOST.COM",
                             NormalizedUserName = "USER@LOCALHOST.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBS5KxZPyeaJHc35EvFjCwa+iO8VvjSHCZAm5LJEtfXvVQ4u7Df6+TfvUkJLz9NabQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEO5Y6RRpVKXVvmYePeEu58E1OnsAq5xoVf95chK36ndyPs3qDuPolrDYPm1Xgk4c1Q==",
                             PhoneNumberConfirmed = false,
                             TwoFactorEnabled = false,
                             UserName = "user@localhost.com"

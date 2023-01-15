@@ -1,13 +1,12 @@
 ﻿using AutoMapper;
 using MediatR;
-using QAndA.Domain.Application.Contracts.Identity;
 using QAndA.Domain.Application.DTOs.AppUsers.ResponseDtos;
 using QAndA.Domain.Application.Features.Questions.Requests.Commands;
 using QAndA.Domain.Application.Helpers.Results;
 using QAndA.Domain.Entities;
 using QAndA.Domain.Entities.IdentityEntities;
 using QAndA.Infrastructure;
-using System.Collections.Generic;
+using QAndA.Infrastructure.Extensions;
 
 namespace QAndA.Domain.Application.Features.Questions.Handlers.Commands
 {
@@ -42,11 +41,11 @@ namespace QAndA.Domain.Application.Features.Questions.Handlers.Commands
                 await _context.SaveChangesAsync();
             }
 
-            return questionPayload is null ? Result.Failed(message: "Failed To Create") : Result.SuccessFul();
+            return questionPayload is null ? Result.Failed( "Failed To Create") : Result.SuccessFul();
 
         }
         /// <summary>
-        /// question ID 8fee2da0-b4eb-460e-98a7-0b906615a970
+        /// question ID d941f789-1423-4b6c-bd7c-5f93038e6088
         /// </summary>
         /// <returns></returns>
 

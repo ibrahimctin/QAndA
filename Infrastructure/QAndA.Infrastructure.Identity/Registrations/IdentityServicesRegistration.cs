@@ -1,14 +1,11 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Microsoft.IdentityModel.Tokens;
 using QAndA.Domain.Application.Contracts.Identity;
-using QAndA.Domain.Application.Options;
 using QAndA.Domain.Entities.IdentityEntities;
+using QAndA.Infrastructure.Extensions;
 using QAndA.Infrastructure.Identity.Services;
-using System.Text;
 
 namespace QAndA.Infrastructure.Identity.Registrations
 {

@@ -17,6 +17,7 @@ namespace QAndA.Domain.Application.Profiles
         public MappingProfile()
         {
             CreateMap<Question,CreateQuestionRequest>().ReverseMap();
+            CreateMap<Question, UpdateQuestionRequest>().ReverseMap();
             CreateMap<Question, QuestionDetailResponse>().ReverseMap();
             CreateMap<Answer, CreateAnswerRequest>().ReverseMap();
             CreateMap<Answer, AnswerDetailResponse>().ReverseMap();
