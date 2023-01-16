@@ -1,10 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using QAndA.Domain.Entities;
-using QAndA.Domain.Entities.Common;
 using QAndA.Domain.Entities.IdentityEntities;
 using QAndA.Infrastructure.Configurations;
 using QAndA.Infrastructure.Extensions;

@@ -43,10 +43,12 @@ namespace QAndA.Domain.Application.Features.Answers.Handlers.Commands
             {
                 await _context.AddAsync(answerPayload);
                 await _context.SaveChangesAsync();
+
+                return Result.SuccessFul();
             }
 
 
-            return answerPayload is null ? Result.Failed("Not Found") : Result.SuccessFul();
+            return Result.Failed("Failed to create"); 
            
         }
 

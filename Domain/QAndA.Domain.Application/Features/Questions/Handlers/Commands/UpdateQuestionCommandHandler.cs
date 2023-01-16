@@ -1,9 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using QAndA.Domain.Application.Contracts.Identity;
-using QAndA.Domain.Application.DTOs.AppUsers.ResponseDtos;
-using QAndA.Domain.Application.DTOs.Questions.ResponseDtos;
 using QAndA.Domain.Application.Features.Questions.Requests.Commands;
 using QAndA.Domain.Application.Helpers.Results;
 using QAndA.Domain.Entities;
@@ -44,9 +41,11 @@ namespace QAndA.Domain.Application.Features.Questions.Handlers.Commands
             {
                 _context.Update(questionPayload);
                 await _context.SaveChangesAsync();
+
+                return Result.SuccessFul();
             }
 
-            return questionPayload is null ? Result.Failed("Failed to Update Question") : Result.SuccessFul();
+            return Result.Failed("Failed to Update Question");
 
 
         }

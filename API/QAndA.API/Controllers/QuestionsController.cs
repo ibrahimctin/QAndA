@@ -34,8 +34,6 @@ namespace QAndA.API.Controllers
             var repsonse = await _mediator.Send(command);
             return Ok(repsonse);
 
-
-
         }
     }
 }

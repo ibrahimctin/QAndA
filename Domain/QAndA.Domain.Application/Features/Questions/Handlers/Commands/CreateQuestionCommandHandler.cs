@@ -39,9 +39,11 @@ namespace QAndA.Domain.Application.Features.Questions.Handlers.Commands
             {
                 await _context.AddAsync(questionPayload);
                 await _context.SaveChangesAsync();
+
+                return Result.SuccessFul();
             }
 
-            return questionPayload is null ? Result.Failed( "Failed To Create") : Result.SuccessFul();
+            return Result.Failed("Failed To Create");
 
         }
         /// <summary>
